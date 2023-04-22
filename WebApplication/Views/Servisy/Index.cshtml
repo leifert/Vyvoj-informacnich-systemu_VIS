@@ -1,0 +1,65 @@
+@model IEnumerable<BussinessLayer.BO.Models.ServisModel>
+@{
+    ViewData["Title"] = "Servis";
+}
+<div>
+<button type="button" class="btn btn-success" onclick="location.href='@Url.Action("index","NovyServis")'">Nový servis</button>
+</div>
+<br/>
+<h4>Seznam oprav</h4>
+<div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                Začátek
+            </th>
+            <th>
+                Konec
+            </th>
+            <th>
+                Popis
+            </th>
+            <th>
+                ID kola
+            </th>
+            <th>
+                ID opraváře
+            </th>
+            <th>
+                Opravář
+            </th>
+            
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Convert.ToDateTime(item.Zacatek).ToString("dd/MM/yyyy")
+                </td>
+                
+                <td>
+                    @Convert.ToDateTime(item.Konec).ToString("dd/MM/yyyy")
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.Popis)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KoloId) @Html.ActionLink("Link", "Details", new {  id=item.KoloId }) 
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ZamestnanecId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Zamestnanec)
+                </td>
+                
+            </tr>
+        }
+        </tbody>
+    </table>
+    
+</div>

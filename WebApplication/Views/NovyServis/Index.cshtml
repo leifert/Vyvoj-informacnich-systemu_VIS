@@ -1,0 +1,15 @@
+@model BussinessLayer.BO.Models.ServisModel
+@{
+    ViewData["Title"] = "Nový servis";
+}
+<div style="width:40%;margin-top:2%">
+@using (Html.BeginForm("SaveRecord", "NovyServis", FormMethod.Post))
+{
+    @Html.TextBoxFor(model => model.Zacatek, "{dd/MM/yyyy}", new { @class = "form-control", @placeholder = "Začátek", type="date" })
+    @Html.TextBoxFor(model => model.Konec, "{dd/MM/yyyy}", new { @class = "form-control", @placeholder = "Konec", type="date" })
+    @Html.TextBoxFor(model => model.Popis, new { @class = "form-control", @placeholder = "Popis", @type = "text" })
+    @Html.DropDownListFor(model => model.KoloId,  ViewBag.kola as SelectList, "Kolo", new { @class = "form-control" })
+    @Html.DropDownListFor(model => model.ZamestnanecId, ViewBag.zamestnanci as SelectList, "Zaměstnanec", new { @class = "form-control" })
+    <input type="submit" value="Vložit" class="btn btn-block btn-primary" />
+}
+</div>

@@ -1,0 +1,74 @@
+@model IEnumerable<BussinessLayer.BO.Models.ZamestnanecModel>
+@{
+    ViewData["Title"] = "Zaměstnanci";
+}
+<h4>Seznam zaměstnanců</h4>
+<div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                Login
+            </th>
+            <th>
+                Křestní jméno
+            </th>
+            <th>
+                Příjmení
+            </th>
+            <th>
+                E-mail
+            </th>
+            <th>
+                Adresa
+            </th>
+            <th>
+                Telefon
+            </th>
+            <th>
+                č. bank účtu
+            </th>
+            <th>
+                Zaměstnanec od
+            </th>
+            
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Login)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Jmeno)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prijmeni)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adresa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BankUcet)
+                </td>
+                <td>
+                     @Convert.ToDateTime(item.PracovniPomerOd).ToString("dd/MM/yyyy")
+                </td>
+                
+            </tr>
+        }
+        </tbody>
+    </table>
+    
+</div>
+<div>
+    <button type="button" class="btn btn-warning" onclick="location.href='@Url.Action("index","Zamestnanci")'">Exportovat</button>
+</div>

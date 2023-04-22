@@ -1,0 +1,60 @@
+@model IEnumerable<BussinessLayer.BO.Models.UzivatelModel>
+@{
+    ViewData["Title"] = "Uživatelé";
+}
+<h4>Seznam uživatelů</h4>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Login
+                </th>
+                <th>
+                    Křestní jméno
+                </th>
+                <th>
+                    Příjmení
+                </th>
+                <th>
+                    E-mail
+                </th>
+                <th>
+                    Adresa
+                </th>
+                <th>
+                    Telefon
+                </th>
+                
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Login)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Jmeno)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Prijmeni)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Adresa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefon)
+                    </td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+    
+</div>

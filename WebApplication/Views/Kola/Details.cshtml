@@ -1,0 +1,16 @@
+@model BussinessLayer.BO.Models.KoloModel
+@{
+    ViewData["Title"] = "Detail kola";
+}
+
+
+<div>
+    <h2>@Html.DisplayFor(model => model.Nazev)</h2>
+    <p><b>Typ: </b>@Html.DisplayFor(model => model.Typ)</p>
+    <p><b>Popisek: </b>@Html.DisplayFor(model => model.Popis)</p>
+    <p><b>Záloha: </b>@Html.DisplayFor(model => model.Zaloha) Kč</p>
+    <p><b>Cena za den: </b>@Html.DisplayFor(model => model.CenaDen) Kč</p>
+    <p><b>Cena za tyden: </b>@Html.DisplayFor(model => model.CenaTyden) Kč</p>
+    <p><b>Cena za víkend: </b>@Html.DisplayFor(model => model.CenaVikend) Kč</p>
+  
+</div>

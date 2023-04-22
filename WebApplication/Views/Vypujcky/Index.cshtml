@@ -1,0 +1,78 @@
+@model IEnumerable<BussinessLayer.BO.Models.VypujckaModel>
+@{
+    ViewData["Title"] = "Výpůjčky";
+}
+<div>
+<button type="button" class="btn btn-success" onclick="location.href='@Url.Action("index","NovaVypujcka")'">Nová výpůjčka</button>
+</div>
+<br/>
+<h4>Seznam výpůjček</h4>
+<div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                Začátek výpůjčky
+            </th>
+            <th>
+                Konec výpůjčky
+            </th>
+            <th>
+                Cena
+            </th>
+            <th>
+                ID zaměstnance
+            </th>
+            <th>
+                Zaměstnanec
+            </th>
+            
+            <th>
+                ID kola
+            </th>
+            <th>
+                ID uživatele
+            </th>
+            <th>
+                Uživatel
+            </th>
+            
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Convert.ToDateTime(item.Zacatek).ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    @Convert.ToDateTime(item.Konec).ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cena) Kč
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ZamestnanecId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Zamestnanec)
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.KoloId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UzivatelId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Uzivatel)
+                </td>
+                
+                
+            </tr>
+        }
+        </tbody>
+    </table>
+    
+</div>

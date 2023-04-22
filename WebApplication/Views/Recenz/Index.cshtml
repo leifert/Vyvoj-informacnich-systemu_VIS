@@ -1,0 +1,58 @@
+@model IEnumerable<BussinessLayer.BO.Models.RecenzeModel>
+@{
+    ViewData["Title"] = "Recenze";
+}
+<div>
+<button type="button" class="btn btn-success" onclick="location.href='@Url.Action("index","PridatRecenzi")'">Přidat recenzi</button>
+</div>
+<br/>
+<h4>Seznam recenzí</h4>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    ID kola
+                </th>
+                <th>
+                    ID uživatele
+                </th>
+                <th>
+                    Uživatel
+                </th>
+                
+                <th>
+                    Popis
+                </th>
+                <th>
+                    Hodnocení
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.KoloId) @Html.ActionLink("Link", "Details", new {  id=item.KoloId }) 
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UzivatelId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Uzivatel)
+                    </td>
+                    
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Popis)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Hvezdy)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    
+</div>

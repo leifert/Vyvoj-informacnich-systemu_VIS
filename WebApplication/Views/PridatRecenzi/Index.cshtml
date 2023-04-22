@@ -1,0 +1,15 @@
+@model BussinessLayer.BO.Models.RecenzeModel
+@{
+    ViewData["Title"] = "Přidat recenzi";
+}
+<div style="width:40%;margin-top:2%">
+    @using (Html.BeginForm("SaveRecord", "PridatRecenzi", FormMethod.Post))
+    {
+        @Html.TextBoxFor(model => model.Hvezdy, new { @class = "form-control", @placeholder = "Hodnoceni", type="number",@min = "1", @max = "10" })
+        @Html.TextBoxFor(model => model.Popis, new { @class = "form-control", @placeholder = "Text", type="text" })
+        @Html.DropDownListFor(model => model.KoloId,  ViewBag.kola as SelectList, "Kolo", new { @class = "form-control" })
+        @Html.DropDownListFor(model => model.UzivatelId, ViewBag.uzivatele as SelectList, "Uživatel", new { @class = "form-control" })
+   
+        <input type="submit" value="Vložit" class="btn btn-block btn-primary" />
+    }
+</div>

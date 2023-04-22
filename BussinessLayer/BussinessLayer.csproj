@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{117633F3-427F-47B2-B27F-E63ED9D9EA19}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>BussinessLayer</RootNamespace>
+        <AssemblyName>BussinessLayer</AssemblyName>
+        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="BO\Controllers\Iterator.cs" />
+        <Compile Include="BO\Controllers\KoloController.cs" />
+        <Compile Include="BO\Controllers\RecenzeController.cs" />
+        <Compile Include="BO\Controllers\ServisController.cs" />
+        <Compile Include="BO\Controllers\UzivatelController.cs" />
+        <Compile Include="BO\Controllers\VypujckaController.cs" />
+        <Compile Include="BO\Controllers\ZamestnanecController.cs" />
+        <Compile Include="BO\Models\KoloModel.cs" />
+        <Compile Include="BO\Models\RecenzeModel.cs" />
+        <Compile Include="BO\Models\ServisModel.cs" />
+        <Compile Include="BO\Models\UzivatelModel.cs" />
+        <Compile Include="BO\Models\VypujckaModel.cs" />
+        <Compile Include="BO\Models\ZamestnanecModel.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+        <Project>{e832f90c-5b1a-474d-aab4-46e7abafadb4}</Project>
+        <Name>DataLayer</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\DTO\DTO.csproj">
+        <Project>{c4de1039-0b8f-492d-adb2-c915375cd974}</Project>
+        <Name>DTO</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>

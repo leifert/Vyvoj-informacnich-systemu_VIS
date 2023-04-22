@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-16"?>
+	<Zamestnanec  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">  
+		<Id>1</Id>  
+        <Login>Mek589</Login>
+		<Jmeno>Matrtin</Jmeno>
+		<Prijmeni>Měkký</Prijmeni>
+		<Email>mekkymartin@seznam.cz</Email>
+		<Adresa>Nerudová 14, Opava</Adresa>
+		<Telefon>754132687</Telefon>
+		<BankUcet>541065970</BankUcet>
+		<PracovniPomerOd>2020-01-1T00:00:00</PracovniPomerOd>
+	</Zamestnanec><?xml version="1.0" encoding="utf-16"?>
+	<Zamestnanec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <Id>2</Id>  
+        <Login>tvr456</Login>
+		<Jmeno>František</Jmeno>
+		<Prijmeni>Tvrdý</Prijmeni>
+		<Email>tvrdyfranta@seznam.cz</Email>
+		<Adresa>Malinová 14, Opava</Adresa>
+		<Telefon>605987425</Telefon>
+		<BankUcet>65045060</BankUcet>
+		<PracovniPomerOd>2020-01-1T00:00:00</PracovniPomerOd>
+	</Zamestnanec><?xml version="1.0" encoding="utf-16"?>
+	<Zamestnanec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+		<Id>3</Id>
+		<Login>Voj156</Login>
+		<Jmeno>David</Jmeno>
+		<Prijmeni>Vojacek</Prijmeni>
+		<Email>vojnadavid@seznam.cz</Email>
+		<Adresa>Svobodová 15, Opava</Adresa>
+		<Telefon>754864112</Telefon>
+		<BankUcet>640510879</BankUcet>
+		<PracovniPomerOd>2020-01-01T00:00:00</PracovniPomerOd>
+	</Zamestnanec>
